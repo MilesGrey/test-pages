@@ -21,6 +21,10 @@ jobs:
         with:
           python-version: 3.9
           
+      - name: Install airium
+        run: |
+          pip install airium
+          
       - name: Generate index.html
         run: |
           python generate_html.py
