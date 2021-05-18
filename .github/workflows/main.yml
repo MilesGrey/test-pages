@@ -28,3 +28,9 @@ jobs:
       - name: Generate index.html
         run: |
           python generate_html.py
+          
+      - name: Archive generated index.html
+        uses: actions/upload-artifact@v2
+        with:
+          name: Generated index.html
+          path: generated_index.html
