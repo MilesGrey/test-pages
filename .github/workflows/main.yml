@@ -29,8 +29,9 @@ jobs:
         run: |
           python generate_html.py
           
-      - name: Archive generated index.html
-        uses: actions/upload-artifact@v2
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
         with:
-          name: Generated index.html
-          path: generated_index.html
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
