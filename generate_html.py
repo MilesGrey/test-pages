@@ -1,6 +1,6 @@
 from airium import Airium
 
-
+from pathlib import Path
 
 
 
@@ -20,5 +20,6 @@ def generate_html():
 
 if __name__ == '__main__':
     html = generate_html()
+    Path('./out/').mkdir(exist_ok=True)
     with open('./out/index.html', 'w') as file:
         file.write(html)
